@@ -1,0 +1,17 @@
+{
+  "name": "codex-aseprite",
+  "displayName": "Aseprite MCP Bridge",
+  "description": "Connect Aseprite to local MCP agents such as Codex and DeepSeek Harness over WebSocket.",
+  "version": "0.7.1",
+  "publisher": "local",
+  "categories": [
+    "Scripts"
+  ],
+  "contributes": {
+    "scripts": [
+      {
+        "path": "./main.lua"
+      }
+    ]
+  }
+}
