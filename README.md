@@ -1,4 +1,4 @@
-# Aseprite MCP Bridge
+# Aseprite AI plug
 
 这个扩展和自带的 MCP server 把 Aseprite 连接到支持 Model Context Protocol
 (MCP) 的本地 AI agent。开箱支持两个 agent：
@@ -54,6 +54,19 @@ Codex 和 DSH 可以同时连接，并共享同一个 Aseprite 连接。
 
 每次启动 Aseprite 都会执行注册，因此更新或重装扩展后会自动刷新 server 路径。
 
+## 使用流程
+
+- **安装插件**：在aseprite的上框栏中选择:Edit > Preferences > Extensions > Add Extension
+  >选择压缩文件
+- **向agent注册mcp工具**：在aseprite上框中选择File > Scripts > MCP Bridge > Register With Codex/DeepSeek Harness
+- 在同级目录点击Connect to local bridge
+- **向agent配置生图大模型**：在aseprite上框中选择File > Scripts > MCP Bridge > Configure image API...
+  填写 Base URL（默认 `https://api.openai.com/v1`）、API key、模型名（例如
+  `gpt-image-1`），以及可选的尺寸（如 `1024x1024`）。
+  配置好后遇到需要大幅重构的工作等,智能体可以通过调用生图大模型生成所需素材,再放入aseprite工作区进行修改
+两个工具都运行在共享 MCP server 中，Codex 和 DSH 一样可用；不绑定 DSH。
+
+
 ## DeepSeek Harness (DSH) 配置
 
 DSH 适配器使用内置的 `@deepseek-ai/dsh-mcp-client` 插件，当前 DSH 版本自带。
@@ -96,17 +109,4 @@ env = { ASEPRITE_BRIDGE_TOKEN = "<shared bridge token>" }
 ## MCP 工具
 
 Codex 和 DSH 从 MCP server 获得相同的 42 个工具。
-
-### 使用流程
-
-- **安装插件**：在aseprite的上框栏中选择:Edit > Preferences > Extensions > Add Extension
-  >选择压缩文件
-- **向agent注册mcp工具**：在aseprite上框中选择File > Scripts > MCP Bridge > Register With Codex/DeepSeek Harness
-- 在同级目录点击Connect to local bridge
-- **向agent配置生图大模型**：在aseprite上框中选择File > Scripts > MCP Bridge > Configure image API...
-  填写 Base URL（默认 `https://api.openai.com/v1`）、API key、模型名（例如
-  `gpt-image-1`），以及可选的尺寸（如 `1024x1024`）。
-  配置好后遇到需要大幅重构的工作等,智能体可以通过调用生图大模型生成所需素材,再放入aseprite工作区进行修改
-两个工具都运行在共享 MCP server 中，Codex 和 DSH 一样可用；不绑定 DSH。
-
 
