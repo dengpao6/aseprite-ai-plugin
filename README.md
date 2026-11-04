@@ -1,4 +1,4 @@
-# Aseprite AI plug
+# Aseprite AI Plugin
 
 这个扩展和自带的 MCP server 把 Aseprite 连接到支持 Model Context Protocol
 (MCP) 的本地 AI agent。开箱支持两个 agent：
