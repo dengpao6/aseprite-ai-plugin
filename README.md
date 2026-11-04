@@ -19,14 +19,14 @@ Codex 和 DSH 可以同时连接，并共享同一个 Aseprite 连接。
    npm install
    ```
 
-2. 在 `codex-aseprite` 目录生成扩展包：
+2. 在项目目录生成扩展包：
 
    ```powershell
    .\package.ps1
    ```
 
 3. 在 Aseprite 中打开 **Edit > Preferences > Extensions > Add Extension**，
-   选择生成的 `codex-aseprite.aseprite-extension.zip`。如有需要，启用该扩展。
+   选择 `aseprite-extension.zip`。如有需要，启用该扩展。
 4. 启用后，扩展会注册自己的 MCP server，并生成一个共享 token 保存在扩展偏好
    中。请同意 Aseprite 的文件访问提示：
    - 它会新增或更新 `%USERPROFILE%\.codex\config.toml`
